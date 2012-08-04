@@ -1,0 +1,5 @@
+django
+django-extensions
+django-compressor
+django-coffeescript
+ipython
