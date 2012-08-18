@@ -120,7 +120,8 @@ INSTALLED_APPS = (
     'django_extensions',
     'compressor',
     'wordtrainer.jqm_utils',
-    'wordtrainer.trainer_site'
+    'wordtrainer.trainer_site',
+    'wordtrainer.vocabulary'
 )
 
 COMPRESS_PRECOMPILERS = (
