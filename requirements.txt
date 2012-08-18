@@ -2,3 +2,4 @@ django
 django-extensions
 django-compressor
 ipython
+django-classy-tags
