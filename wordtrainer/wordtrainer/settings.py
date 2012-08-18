@@ -119,6 +119,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django_extensions',
     'compressor',
+    'wordtrainer.jqm_utils',
     'wordtrainer.trainer_site'
 )
 

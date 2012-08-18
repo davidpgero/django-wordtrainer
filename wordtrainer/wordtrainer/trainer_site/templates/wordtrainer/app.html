@@ -1,4 +1,4 @@
-{% load compress %}
+{% load compress jqm_utils %}
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -17,20 +17,6 @@
     {% endcompress %}
 </head>
 <body> 
-
-<div data-role="page">
-
-	<div data-role="header">
-        <h1>Django Word Trainer</h1> 
-	</div><!-- /header -->
-
-	<div data-role="content">	
-        <p>This is a web application to learn words in a foreign language
-        quickly. Only admins can add words to the collections. So it's designed
-        to be run/hosted by teachers or students themselves.</p>		
-	</div><!-- /content -->
-
-</div><!-- /page -->
-
+    {% jqm_page "home.html" %}
 </body>
 </html>
