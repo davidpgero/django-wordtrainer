@@ -1,0 +1,30 @@
+{% load compress %}
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>My Page</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% compress css %}
+        <link rel="stylesheet" href="{{ STATIC_URL}}wordtrainer/css/jquery.mobile-1.2.0-alpha.1.css" />
+    {% endcompress %}
+    {% compress js %}
+	    <script src="{{ STATIC_URL}}wordtrainer/js/jquery-1.8.0.js"></script>
+	    <script src="{{ STATIC_URL}}wordtrainer/js/jquery.mobile-1.2.0-alpha.1.js"></script>
+    {% endcompress %}
+</head>
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>My Title</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>Hello world</p>		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>

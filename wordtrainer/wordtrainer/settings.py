@@ -119,7 +119,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django_extensions',
     'compressor',
-    'trainer_site'
+    'wordtrainer.trainer_site'
 )
 
 # A sample logging configuration. The only tangible logging
