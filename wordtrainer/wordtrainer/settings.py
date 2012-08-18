@@ -118,7 +118,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django_extensions',
-    'compressor'
+    'compressor',
+    'trainer_site'
 )
 
 # A sample logging configuration. The only tangible logging
