@@ -13,10 +13,12 @@
         <script src="{{ STATIC_URL}}wordtrainer/js/json2.js"></script>
         <script src="{{ STATIC_URL}}wordtrainer/js/underscore.js"></script>
         <script src="{{ STATIC_URL}}wordtrainer/js/backbone.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/backbone-tastypie.js"></script>
         <script type="text/coffeescript" src="{{ STATIC_URL }}wordtrainer/js/app.coffee"></script>
     {% endcompress %}
 </head>
 <body> 
     {% jqm_page "home.html" "homepage" %}
+    {% jqm_page "list_choice.html" "list-choice-page" %}
 </body>
 </html>
