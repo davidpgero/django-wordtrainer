@@ -8,10 +8,12 @@ register = template.Library()
 class JQMPage(Tag):
         name = 'jqm_page'
         options = Options(
-            Argument('template_name', required=True)
+            Argument('template_name', required=True),
+            Argument('page_id', required=True)
         )
 
-        def render_tag(self, context, template_name):
+        def render_tag(self, context, template_name, page_id):
+            context.update(dict(page_id=page_id))
             template = loader.get_template(template_name)
             html = template.render(context)
             return html
