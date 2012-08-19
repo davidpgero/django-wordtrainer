@@ -16,8 +16,6 @@ $ ->
 
   class ListChoicePage extends JQMPage
     el: $ 'div#list-choice-page'
-    initialize: =>
-      1
     update: =>
       list = @$el.find("ul#word-list-list")
       html = ""
@@ -46,14 +44,46 @@ $ ->
     activate: (id) =>
       @word_pairs = new WordPairs
       # Download Pairs of this word list
-      @word_pairs.fetch(data:
-                          'word_list': id)
+      @word_pairs_downloaded = false
+      # Note to fellow coffeescript newbies:
+      # make sure you get the indentation in .fetch right!
+      @word_pairs.fetch(
+                          data:
+                            'word_list': id
+                          success: =>
+                            @word_pairs_downloaded = true
+                            @update()
+      )
       # Now get all TrainingItems for this list and for the logged in user
       @training_items = new TrainingItems
-      @training_items.fetch(data:
-        'word_list': id)
+      @training_items_downloaded = false
+      @training_items.fetch(
+        data:
+          'word_list': id
+        success: =>
+          @training_items_downloaded = true
+          @update()
+      )
       @prompt.text("Hello World")
       @go()
+
+    update: =>
+      if @training_items_downloaded and @word_pairs_downloaded
+        @pair_ids = {}
+        @word_pairs.each (pair, i) =>
+          id = pair.get "id"
+          @pair_ids[id] = pair
+        @training_ids.each (item, i) =>
+          id = item.get word_pair_id
+        new_ids = []
+        new_ids.push(id) if @training_ids[id]== undefined for id, pair of @pair_ids
+        console.log("hello", new_ids)
+
+    enqueue: =>
+      # if @training_items.length < @word_pairs.length
+      
+    next: (id) =>
+      if @training_items.length == 0 then @enqueue()
     
 
   class WordList extends Backbone.Model
