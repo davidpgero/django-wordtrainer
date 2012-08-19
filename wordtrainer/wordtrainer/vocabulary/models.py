@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib import auth
 
 class WordList(models.Model):
     """ A word list contains word pairs. """
@@ -16,6 +16,7 @@ class WordPair(models.Model):
 
 class TrainingItem(models.Model):
     """ Keeps track of pairs in training. """
+    user = models.ForeignKey(auth.models.User)
     word_pair = models.ForeignKey(WordList)
     repetitions = models.IntegerField(default=0)
     mistakes = models.IntegerField(default=0)

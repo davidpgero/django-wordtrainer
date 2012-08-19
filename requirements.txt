@@ -5,3 +5,4 @@ ipython
 django-classy-tags
 django-tastypie
 git+https://github.com/PaulUithol/backbone-tastypie.git
+south

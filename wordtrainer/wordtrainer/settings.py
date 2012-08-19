@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'compressor',
     'tastypie',
+    'south',
     'backbone_tastypie',
     'wordtrainer.jqm_utils',
     'wordtrainer.trainer_site',
