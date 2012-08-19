@@ -9,7 +9,7 @@ Built for the django-dash competition at http://djangodash.com
 * The admin staff manages the vocabulary
 * Students can register and login
 * "Continuous repetition"
-* JQuery Mobile
+* Nice support for mobile devices through JQuery Mobile
 
 
 Continuous Repetition
@@ -21,6 +21,24 @@ More modern systems would try to guess the best time/day to review a word. This 
 
 Also, for more than a very few hundred words, the practicality of the system degrades rapidly.
 
-This application should be different. At any point in time it can query you with a word. The words are chosen at random, but with a random distribution reflecting how well the app thinks you know that card. This distribution is chosen to minimize short-time memory effects to the extent possible. The goal is to be able to learn a lot of words quickly, and repeat them whenever you feel like it. No fixed schedules!
+This application be different. At any point in time it can query you with a word. The words are chosen at random, but with a random distribution reflecting how well the app thinks you know that card. This distribution is chosen to minimize short-time memory effects to the extent possible. The goal is to be able to learn a lot of words quickly, and repeat them whenever you feel like it. No fixed schedules!
+
+Django Dash
+====================
+
+This project was originally started during the Django Dash 2012 competition.
+The goal was to deliver a Djangoproject in 48 hours and make it all open source.
+
+For me, the competition was quite a good excuse to explore coffeescript,
+backbone.js and tastypie. The integration of all of these, however, took the
+most time, and I wasn't able to produce a workable prototype in time. 
+
+- JQuery mobile pages rendered into a single html file via a TemplateTag
+- Pages can use template inheritance without requiring ajax requests for
+  (relatively) static content
+- API served via tastypie
+- Integration with backbone
+- Compiling and compressing all js and coffeescript dependencies into one big
+  file
 
 
